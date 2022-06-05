@@ -8,6 +8,9 @@ const CHECK = "fa-check-circle";
 const UNCHECK = "fa-circle-thin";
 const LINE_THROUGH = "lineThrough";
 
+// List to hold all the to do
+let LIST = [], id = 0;
+
 // Show date
 const options = {weekday : "long", month: "short", day: "numeric"};
 const today = new Date();
@@ -28,14 +31,20 @@ function addToDo(toDo, id, done, trash) {
     const position = "beforeend";
     list.insertAdjacentHTML(position, item);
 }
-addToDo("hello", 1, true, false);
 
 // Add item to the list when hit enter
 document.addEventListener("keyup", function(even) {
     if (event.keyCode == 13) {
         const toDo = input.value;
         if (toDo) {
-            addToDo(toDo);
+            addToDo(toDo, id, false, false);
+            LIST.push({
+                name: toDo,
+                id: id,
+                done: false,
+                trash: false
+            })
+            id++;
         }
         input.value = "";
     }
