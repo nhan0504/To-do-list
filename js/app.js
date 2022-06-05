@@ -26,3 +26,13 @@ function addToDo(toDo) {
     list.insertAdjacentHTML(position, item);
 }
 addToDo("hello");
+
+// Add item to the list when hit enter
+document.addEventListener("keyup", function(even) {
+    if (event.keyCode == 13) {
+        const toDo = input.value;
+        if (toDo) {
+            addToDo(toDo);
+        }
+    }
+});
