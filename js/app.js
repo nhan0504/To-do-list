@@ -33,8 +33,8 @@ function addToDo(toDo, id, done, trash) {
 }
 
 // Add item to the list when hit enter
-document.addEventListener("keyup", function(even) {
-    if (event.keyCode == 13) {
+document.addEventListener("keyup", function(event) {
+    if (event.key == "Enter") {
         const toDo = input.value;
         if (toDo) {
             addToDo(toDo, id, false, false);
@@ -71,7 +71,7 @@ list.addEventListener("click", function(event){
     const elementJob = element.attributes.job.value;
     if (elementJob == "complete") {
         completeToDo(element);
-    } else if (elementJob == "remove"){
+    } else if (elementJob == "delete"){
         removeToDo(element);
     }
 });
