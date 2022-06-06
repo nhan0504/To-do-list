@@ -9,7 +9,8 @@ const UNCHECK = "fa-circle-thin";
 const LINE_THROUGH = "lineThrough";
 
 // List to hold all the to do
-let LIST = [], id = 0;
+let LIST, id;
+
 
 // Show date
 const options = {weekday : "long", month: "short", day: "numeric"};
@@ -44,6 +45,8 @@ document.addEventListener("keyup", function(event) {
                 done: false,
                 trash: false
             })
+            // Add the todo list to local storage
+            localStorage.setItem("TODO", JSON.stringify(LIST));
             id++;
         }
         input.value = "";
@@ -73,5 +76,7 @@ list.addEventListener("click", function(event){
         completeToDo(element);
     } else if (elementJob == "delete"){
         removeToDo(element);
+        // Add the todo list to local storage
+        localStorage.setItem("TODO", JSON.stringify(LIST));
     }
 });
