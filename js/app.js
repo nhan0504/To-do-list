@@ -14,6 +14,23 @@ let LIST, id;
 // Get to do list from local storage
 let data = localStorage.getItem("TODO");
 
+// Check if to do list is empty or not
+if (data) {
+    LIST = JSON.parse(data);
+    id = LIST.length;
+    loadList(LIST); // Show the list to the user interface
+} else {
+    LIST = [];
+    id = 0;
+}
+
+// Load the list to user interface
+function loadList(array) {
+    array.forEach(element => {
+        addToDo(element.name, element.id, element.done, element.trash);
+    });
+}
+
 // Show date
 const options = {weekday : "long", month: "short", day: "numeric"};
 const today = new Date();
