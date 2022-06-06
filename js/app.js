@@ -11,6 +11,8 @@ const LINE_THROUGH = "lineThrough";
 // List to hold all the to do
 let LIST, id;
 
+// Get to do list from local storage
+let data = localStorage.getItem("TODO");
 
 // Show date
 const options = {weekday : "long", month: "short", day: "numeric"};
