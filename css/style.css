@@ -1,16 +1,15 @@
-/* ------------ youtube.com/CodeExplained ------------ */
 body{
     padding: 0;
     margin: 0;
-    background-color: rgba(0,0,0,0.1);
+    background-color: rgba(173,236,246,0.52);
     font-family: 'Titillium Web', sans-serif;
 }
 
 /* ------------ container ------------ */
 .container{
-    padding:10px;
-    width:380px;
-    margin:0 auto;
+    padding:100px;
+    width: 380px;
+    margin: auto;
 }
 
 /* ------------ header ------------ */
