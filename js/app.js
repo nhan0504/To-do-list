@@ -99,3 +99,8 @@ list.addEventListener("click", function(event){
         localStorage.setItem("TODO", JSON.stringify(LIST));
     }
 });
+
+clear.addEventListener("click", () => {
+    localStorage.clear();
+    location.reload();
+} )
